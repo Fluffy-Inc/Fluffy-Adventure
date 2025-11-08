@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://pm52yuogk1hf"
+
+[deps]
+
+files=["res://lang/Fluffyadventurelangs - Página1.pt_BR.translation", "res://lang/Fluffyadventurelangs - Página1.en.translation", "res://lang/Fluffyadventurelangs - Página1.pt.translation", "res://lang/Fluffyadventurelangs - Página1.es.translation", "res://lang/Fluffyadventurelangs - Página1.fr.translation"]
+
+source_file="res://lang/Fluffyadventurelangs - Página1.csv"
+dest_files=["res://lang/Fluffyadventurelangs - Página1.pt_BR.translation", "res://lang/Fluffyadventurelangs - Página1.en.translation", "res://lang/Fluffyadventurelangs - Página1.pt.translation", "res://lang/Fluffyadventurelangs - Página1.es.translation", "res://lang/Fluffyadventurelangs - Página1.fr.translation"]
+
+[params]
+
+compress=true
+delimiter=0
