@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://vo0q7lxg4opg"]
+
+[ext_resource type="Script" uid="uid://dswtv77vylu8d" path="res://obrigado_por_jogar.gd" id="1_i3x7a"]
+[ext_resource type="FontFile" uid="uid://ckw4qondl5cjc" path="res://Fontes/RevMiniPixel.ttf" id="2_i01yr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oknt7"]
+font = ExtResource("2_i01yr")
+font_size = 75
+
+[node name="obrigado por jogar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i3x7a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 2122.0
+offset_bottom = 1440.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -123.5
+offset_right = 147.0
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mundo" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Obrigado por jogar!!
+Atualmente o jogo não
+está 100% finalizado
+e está recebendo atualizações
+constantes
+fique por dentro dessas atualizações
+seguindo a página na Game Jolt!"
+label_settings = SubResource("LabelSettings_oknt7")
+horizontal_alignment = 1

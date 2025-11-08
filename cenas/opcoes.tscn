@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://c74l1mfplkeut"]
+
+[ext_resource type="Script" uid="uid://c0vhq0lp38b53" path="res://scripts/menu principal/opcoes/opcoes.gd" id="1_c0g00"]
+[ext_resource type="Texture2D" uid="uid://p35kvnv5ffh1" path="res://Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png" id="2_5ha7l"]
+[ext_resource type="Script" uid="uid://blnyaonruk7cb" path="res://cenas/opcoestraduzivel.gd" id="3_uhesk"]
+[ext_resource type="AudioStream" uid="uid://bvnvg4kdw8xw8" path="res://musicas/Options.ogg" id="4_66gc6"]
+[ext_resource type="FontFile" uid="uid://ckw4qondl5cjc" path="res://Fontes/RevMiniPixel.ttf" id="4_uhesk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uhesk"]
+font = ExtResource("4_uhesk")
+font_size = 75
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Opcoes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0g00")
+
+[node name="CompleteStaticBg(288X208)" type="Sprite2D" parent="."]
+position = Vector2(1440, 511)
+scale = Vector2(10.238314, 10.058173)
+texture = ExtResource("2_5ha7l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_uhesk")
+
+[node name="OpcoesLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Opcoes"
+label_settings = SubResource("LabelSettings_uhesk")
+horizontal_alignment = 1
+
+[node name="TelaCheia" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("4_uhesk")
+theme_override_font_sizes/font_size = 35
+text = "Tela Cheia"
+alignment = 1
+
+[node name="vsync" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("4_uhesk")
+theme_override_font_sizes/font_size = 35
+disabled = true
+button_pressed = true
+text = "V-sync"
+alignment = 1
+
+[node name="Idiomas" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("4_uhesk")
+theme_override_font_sizes/font_size = 75
+text = "Idiomas"
+
+[node name="Creditos" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("4_uhesk")
+theme_override_font_sizes/font_size = 75
+text = "Créditos"
+
+[node name="Voltar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("4_uhesk")
+theme_override_font_sizes/font_size = 75
+text = "Voltar"
+
+[node name="FluffyAdventureOptions" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(825, 591)
+stream = ExtResource("4_66gc6")
+autoplay = true
+parameters/looping = true
+
+[connection signal="toggled" from="VBoxContainer/TelaCheia" to="." method="_on_tela_cheia_toggled"]
+[connection signal="pressed" from="VBoxContainer/Idiomas" to="." method="_on_idiomas_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]

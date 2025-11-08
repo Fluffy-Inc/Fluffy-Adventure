@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://5abv6ejhwrfh"]
+
+[ext_resource type="FontFile" uid="uid://ckw4qondl5cjc" path="res://Fontes/RevMiniPixel.ttf" id="2_firmo"]
+[ext_resource type="Script" uid="uid://vbel0f2a62eg" path="res://scripts/lua/helloworld.lua" id="2_u6j7t"]
+[ext_resource type="Texture2D" uid="uid://bawmkyrmx4cms" path="res://iconv1.png" id="2_xhy0f"]
+[ext_resource type="AudioStream" uid="uid://c7ld7up0mvjv" path="res://musicas/Fluffy Inc abertura.ogg" id="4_firmo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_firmo"]
+font = ExtResource("2_firmo")
+font_size = 75
+
+[node name="Empresas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_u6j7t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48697916
+anchor_top = 0.48425925
+anchor_right = 0.67760414
+anchor_bottom = 0.55833334
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fluffy Inc"
+label_settings = SubResource("LabelSettings_firmo")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Iconv1" type="Sprite2D" parent="."]
+position = Vector2(869, 538)
+scale = Vector2(0.07395966, 0.07604049)
+texture = ExtResource("2_xhy0f")
+
+[node name="FluffyIncAbertura" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(917, 833)
+stream = ExtResource("4_firmo")
+autoplay = true

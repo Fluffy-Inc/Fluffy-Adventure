@@ -1,0 +1,170 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhn4uclorkoo0"]
+
+[ext_resource type="Script" uid="uid://bt8w81q68jrmd" path="res://scripts/menu principal/opcoes/menu.gd" id="1_64url"]
+[ext_resource type="Texture2D" uid="uid://p35kvnv5ffh1" path="res://Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png" id="2_hsu4v"]
+[ext_resource type="Script" uid="uid://dc6ahxsxnjmnp" path="res://cenas/traducaomenu.gd" id="4_qcnrj"]
+[ext_resource type="FontFile" uid="uid://ckw4qondl5cjc" path="res://Fontes/RevMiniPixel.ttf" id="5_nxpqr"]
+[ext_resource type="AudioStream" uid="uid://8pvnj6oj07tt" path="res://musicas/Menu 1.ogg" id="6_nxpqr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_64url"]
+font = ExtResource("5_nxpqr")
+font_size = 75
+
+[sub_resource type="LabelSettings" id="LabelSettings_hsu4v"]
+font = ExtResource("5_nxpqr")
+font_size = 35
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_64url")
+
+[node name="CompleteStaticBg(288X208)" type="Sprite2D" parent="."]
+position = Vector2(1440, 511)
+scale = Vector2(10.238314, 10.058173)
+texture = ExtResource("2_hsu4v")
+
+[node name="titulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.5
+offset_right = 120.5
+offset_bottom = 177.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "
+
+Fluffy Adventure
+Alpha"
+label_settings = SubResource("LabelSettings_64url")
+horizontal_alignment = 1
+
+[node name="botoes" type="HBoxContainer" parent="."]
+auto_translate_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -15.5
+offset_right = 24.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+script = ExtResource("4_qcnrj")
+
+[node name="jogar" type="Button" parent="botoes"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("5_nxpqr")
+theme_override_font_sizes/font_size = 75
+text = "Jogar"
+
+[node name="opcoes" type="Button" parent="botoes"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("5_nxpqr")
+theme_override_font_sizes/font_size = 75
+text = "Opcões"
+
+[node name="sair" type="Button" parent="botoes"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_pressed_color = Color(1, 0.69411767, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("5_nxpqr")
+theme_override_font_sizes/font_size = 75
+text = "Sair"
+
+[node name="versão" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "v1.1.2 Alpha"
+label_settings = SubResource("LabelSettings_hsu4v")
+
+[node name="copyright" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -163.0
+offset_bottom = 41.0
+grow_horizontal = 0
+text = "© Fluffy Inc 2025"
+label_settings = SubResource("LabelSettings_hsu4v")
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -41.0
+offset_right = 576.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.9490196, 0.9490196, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.9490196, 0.9490196, 1)
+theme_override_fonts/font = ExtResource("5_nxpqr")
+theme_override_font_sizes/font_size = 35
+text = "Ajude o jogo com traduções na Crowdin"
+uri = "https://crowdin.com/project/fluffy-adventure"
+language = "pt_BR"
+structured_text_bidi_override = 1
+
+[node name="LinkButton2" type="LinkButton" parent="."]
+layout_mode = 1
+offset_right = 576.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.9490196, 0.9490196, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.9490196, 0.9490196, 1)
+theme_override_fonts/font = ExtResource("5_nxpqr")
+theme_override_font_sizes/font_size = 35
+text = "Encontrou algum bug? reporte no github"
+uri = "https://github.com/Fluffy-Inc/Fluffy-Adventure/issues"
+language = "pt_BR"
+structured_text_bidi_override = 1
+
+[node name="FluffyAdventureMenu1" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1028, 471)
+stream = ExtResource("6_nxpqr")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="botoes/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="botoes/opcoes" to="." method="_on_opcoes_pressed"]
+[connection signal="pressed" from="botoes/sair" to="." method="_on_sair_pressed"]
